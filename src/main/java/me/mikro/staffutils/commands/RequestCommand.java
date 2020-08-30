@@ -38,21 +38,21 @@ public class RequestCommand implements CommandExecutor {
                 player.sendMessage(Utils.chat(plugin.messagesFile.getConfig().getString("REQUEST.active_reply")));
                 return true;
             }
-                String message = String.join(" ", args);
-                for (String s : plugin.messagesFile.getConfig().getStringList("REQUEST.player_message")) {
-                    player.sendMessage(Utils.chat(s).replace("%message%", message));
-                }
-                plugin.requestmessage.put(player.getUniqueId(), message);
-                for (Player p : Bukkit.getOnlinePlayers()) {
-                    if (p.hasPermission("staffutils.request.reply")) {
-                        for (String string : plugin.messagesFile.getConfig().getStringList("REQUEST.message")) {
-                            p.sendMessage(Utils.chat(string).replace("%player%", player.getName()).replace("%message%", message));
-                        }
-
-                    }
-                }
-                return true;
+            String message = String.join(" ", args);
+            for (String s : plugin.messagesFile.getConfig().getStringList("REQUEST.player_message")) {
+                player.sendMessage(Utils.chat(s).replace("%message%", message));
             }
+            plugin.requestmessage.put(player.getUniqueId(), message);
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                if (p.hasPermission("staffutils.request.reply")) {
+                    for (String string : plugin.messagesFile.getConfig().getStringList("REQUEST.message")) {
+                        p.sendMessage(Utils.chat(string).replace("%player%", player.getName()).replace("%message%", message));
+                    }
+
+                }
+            }
+            return true;
+        }
         if (args.length < 2) {
             player.sendMessage(Utils.chat(plugin.messagesFile.getConfig().getString("REQUEST.usage_staff")));
             return true;
@@ -66,12 +66,12 @@ public class RequestCommand implements CommandExecutor {
             player.sendMessage(Utils.chat(plugin.messagesFile.getConfig().getString("REQUEST.no_request")));
             return true;
         }
-        String reply = "";
+        StringBuilder reply = new StringBuilder();
         for (int i = 1; i < args.length; i++) {
-            reply += args[i] + " ";
+            reply.append(args[i]).append(" ");
         }
         for (String string : plugin.messagesFile.getConfig().getStringList("REQUEST.reply_message_player")) {
-            target.sendMessage(Utils.chat(string).replace("%reply%", reply).replace("%message%", plugin.requestmessage.get(target.getUniqueId())).replace("%replier%", player.getName()));
+            target.sendMessage(Utils.chat(string).replace("%reply%", reply.toString()).replace("%message%", plugin.requestmessage.get(target.getUniqueId())).replace("%replier%", player.getName()));
         }
         for (Player p : Bukkit.getOnlinePlayers()) {
             if (p.hasPermission("staffutils.request.reply")) {

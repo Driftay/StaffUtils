@@ -45,7 +45,7 @@ public class ChatSettingsCommand implements CommandExecutor {
         }
 
         if (plugin.getConfig().getBoolean("CHATSETTINGS.fill_with_glass")) {
-            for (int i=0; i<27; i++) {
+            for (int i = 0; i < 27; i++) {
                 inv.setItem(i, glass);
             }
         }

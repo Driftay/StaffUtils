@@ -12,7 +12,7 @@ public class TimeUtil {
         int minutes = (int) ((remaining % MILLIS_TO_HOURS) / MILLIS_TO_MINUTES);
         int seconds = (int) ((remaining % MILLIS_TO_MINUTES) / MILLIS_TO_SECONDS);
 
-        return new int[] {
+        return new int[]{
                 days,
                 hours,
                 minutes,
@@ -24,17 +24,17 @@ public class TimeUtil {
         int[] remainingTime = getRemainingTime(remaining);
         String string = "";
 
-        for(int i = 0; i < remainingTime.length; i++) {
-            if(remainingTime[i] == 0) continue;
+        for (int i = 0; i < remainingTime.length; i++) {
+            if (remainingTime[i] == 0) continue;
 
             String s = null;
 
-            if(i == 0) s = "d";
-            if(i == 1) s = "h";
-            if(i == 2) s = "m";
-            if(i == 3) s = "s";
+            if (i == 0) s = "d";
+            if (i == 1) s = "h";
+            if (i == 2) s = "m";
+            if (i == 3) s = "s";
 
-            if(string.length() == 0) {
+            if (string.length() == 0) {
                 string = remainingTime[i] + s;
             } else {
                 string = string + " " + remainingTime[i] + s;

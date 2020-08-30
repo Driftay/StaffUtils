@@ -45,7 +45,8 @@ public class StaffUtilsCommand implements CommandExecutor {
             }
             sender.sendMessage(Utils.chat("&8&m&l------------------------------"));
             return true;
-        } if (args[0].contains("reload")) {
+        }
+        if (args[0].contains("reload")) {
             if (!sender.hasPermission("staffutils.reload")) {
                 sender.sendMessage(Utils.chat(plugin.messagesFile.getConfig().getString("noperm")));
                 return true;
