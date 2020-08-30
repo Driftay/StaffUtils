@@ -1,0 +1,28 @@
+name: StaffUtils
+main: me.mikro.staffutils.Main
+author: Mikroskoldis
+version: '1.2'
+api-version: 1.13
+commands:
+  tp:
+    description: "Teleport to a online player or teleport to a currently offline player"
+  staffutils:
+    description: "Displays which version staffcore is currently running on"
+  staffsettings:
+    description: "Staffsettings regarding plugin features"
+  staffchat:
+    description: "Turns on or off staffchat and could be used to temporarily send a message"
+    aliases:
+      - sc
+  freeze:
+    description: "Command to freeze a specific player and impair all of their movement"
+  staffmode:
+    description: "Puts you in staff mode which gives you a temporary inventory with staff tools"
+  vanish:
+    description: "Vanishes you from all of the other players"
+    aliases:
+    - v
+  request:
+    description: "A way of contacting online staffmembers with a message and a way for staff memebers to reply to your message"
+  chatsettings:
+    description: "A gui to change certain chat settings for your chat on the server"

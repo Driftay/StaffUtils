@@ -1,0 +1,124 @@
+#If something buggs and a item won't generate correctly please delete the config file and reload the server.
+#If you have any bugs please send me a message on Spigot
+vanish:
+  notify: true
+  pickupitems: false
+  damage_others: false
+
+freeze:
+#freeze_message_space is whether you'd want to have 5 blank lines in the chat before each frozen message.
+#Note that the slowness_amplifier starts on 0, ex amp 0 = slowness 1
+#Broadcast is whether you'd want a message to be broadcasted to all players with a specific permission to see whenever a player freezes another player.
+  broadcast: true
+  freeze_message_space: true
+  slowness: true
+  slowness_amplifier: 9
+  blindness: false
+  click_ban_suggested_command: "/ban %player% Logged out whilst frozen"
+  allowed_commands:
+    - "/r"
+    - "/msg"
+    - "/tell"
+
+STAFFJOIN:
+  enabled: true
+  join_message: "&3&lSTAFF&r&8» &a%player% &7logged onto the server"
+  leave_message: "&3&lSTAFF&r&8» &a%player% &7logged off the server"
+
+STAFFMODE:
+#Please note that the first slot in the hotbar starts with 0 and the last one is 8.
+#Also I'm sorry but you can't add your own items yet. Maybe in a future update.
+  items:
+    compass:
+      enabled: true
+      name: "&2Teleport Compass"
+      slot: 0
+      lore:
+        - "&7Right click to phase through something"
+    randomtp:
+      enabled: true
+      name: "&eRandom TP"
+      slot: 1
+      lore:
+        - "&7Right click to TP to a random player"
+    invseebook:
+      enabled: true
+      name: "&eInspect Inventory"
+      slot: 2
+      lore:
+        - "&7Right click on a player to inspect their inventory"
+    freezetool:
+      enabled: true
+      name: "&bFreeze Tool"
+      slot: 6
+      lore:
+        - "&7Right click to freeze a player"
+    stafflist:
+      enabled: true
+      name: "&3Online Staff"
+      slot: 7
+      lore:
+        - "&7Right click to view online staffmembers"
+    vanish:
+      enabled: true
+      name: "&eVanished"
+      name_unvanished: "&eVanished"
+      slot: 8
+      lore:
+        - "&7Right click to vanish"
+    wand:
+      enabled: false
+      name: "&2Worldedit Wand"
+      slot: 4
+      lore:
+        - "&7Worldedit wand"
+
+STAFFSETTINGS:
+  fill_with_glass: false
+  on_setting: "&aon"
+  off_setting: "&coff"
+  names:
+    staffmode_on_join:
+      name: "&eStaffmode on join %setting%"
+      slot: 11
+      lore:
+        - "&7Click to change whether you'd want to join in staffmode or in normal mode"
+    staffchat_on_join:
+      name: "&eStaffchat on join %setting%"
+      slot: 12
+      lore:
+        - "&7Click to change whether you'd want to toggle staffchat on join"
+    staffchat_view:
+      name: "&eView staffchat %setting%"
+      slot: 14
+      lore:
+        - "&7Click to change whether you'd want to see staffchat or not"
+    vanish_view_others:
+      name: "&eView vanished players %setting%"
+      slot: 15
+      lore:
+      - "&7Click to change whether you want to be able to see other vanished staff memebers"
+      - "&c(Still requires permission 'staffutils.vanish.see')"
+
+#Size is recommended to either be 9 or 27
+CHATSETTINGS:
+  size: 27
+  fill_with_glass: false
+  on_setting: "&aenabled"
+  off_setting: "&cdisabled"
+  names:
+    clearchat:
+      name: "&c&lClearchat"
+      slot: 12
+      lore:
+        - "&7Click to clear the chat"
+    mutechat:
+      name: "&ePublic chat: %setting%"
+      slot: 13
+      lore:
+        - "&7Click to toggle the public chat for everyone"
+    slowchat:
+      name: "&eSlowchat: &c%slow%"
+      slot: 14
+      lore:
+        - "&7Click to change the amount of wait needed between each message"
